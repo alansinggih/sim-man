@@ -1,0 +1,127 @@
+#options {
+    border:1px solid #AAA;
+    background:#f7f7f7;
+    overflow:hidden scroll;
+}
+
+#options form div{
+    padding:.5em .1em !important;
+    text-align:center;
+    margin-bottom:.5em !important;
+    border:1px solid #eee;
+    background: #f7f7f7;
+    border-radius: 6px;
+    min-height:45px;
+}
+#options form div div{
+    padding:.5em 1em !important;
+    text-align:center;
+    margin-bottom:.2em !important;
+    border:none;
+    font-size: .8em;
+    width: inherit !important;
+}
+#options div button{
+    padding:.5em 1em !important;
+    -moz-appearance:none;
+    border:1px solid #d7d7d7;
+    background-color:#04385e;
+    color: #fff;
+    font-size: 1.2em !important;
+}
+#options div{
+text-align:center;
+padding: 1em !important;
+background: #f1f1f1;
+ }
+#options input{
+    width:80%;
+}
+#options textarea{
+    width:86%;
+    height: 10vh;
+    min-height: 95px;
+    -moz-appearance: none !important;
+    border: none !important;
+}
+#options input,textarea{
+    padding:1em !important;
+    margin-top:1em !important;
+    -moz-appearance:none;
+    border:1px solid #d9d9d9;
+}
+#options br{
+    margin-bottom:.1em;
+}
+#options select{
+    padding:.2em !importan;
+    -moz-appearance:none;
+    border:1px solid #d9d9d9; 
+}
+
+#options div.setTempatJam select{
+    width: 72% !important;
+    text-align: center;
+    height: 35px;
+}
+#options div.skp .setSKP,#options div.setTempatJam select,.setWaktu,.setKegiatan{
+    width: 93% !important;
+    text-align: center;
+    height: 45px;
+    padding: .3em .7em !important;
+}
+
+
+#options div label{
+    width: inherit !important;
+}
+#options .right{
+    float:right;
+    position:relative;
+    right:1em;
+    top:.5em;
+}
+#options .left{
+ text-align: left !important;
+ min-height:10px;
+}
+#options > div > h1 {
+    margin:0;
+    background-color:#04385e;
+    padding: .5em !important;
+    color: #fff;
+    text-transform: uppercase;
+    font-size:1.7em;
+    text-align: center;
+}
+
+#options > div > form {
+    padding:.4em !important;
+    background:#eaeaea;
+}
+
+
+#options legend {
+    font-weight:bold;
+}
+
+#cp2 > h1,#cp7 > h1,#cp12 > h1,#cp17 > h1{
+  background: #045e60 !important;
+}
+#cp3 > h1,#cp8 > h1#cp13 > h1,#cp18 > h1{
+  background: #515e36 !important;
+}
+#cp4 > h1,#cp9 > h1,#cp14 > h1,#cp19 > h1{
+  background: #5e4434 !important;
+}
+#cp5 > h1,#cp10 > h1,#cp15 > h1,#cp20 > h1{
+  background: #5e2234 !important;
+}
+
+select.ed{
+  -moz-appearance: none;
+  border:1px solid #dfdfb5;
+  width:60%;
+  margin:.6em !important;
+  text-align: center;
+}

@@ -1,0 +1,135 @@
+.bgHeader .content1,.bgHeader .content1 #form_content{
+  width:100vw !important;
+}
+.bgHeader .content1 #form_content a button{
+  margin:0 .4em 1em !important;
+  width:40vw !important;
+  height:20vw !important;
+  overflow: hidden !important;
+  white-space: normal !important;
+  font-size:.8em !important;
+}
+
+.bgHeader div.row.wrapper-row{
+  width:100vw !important;
+}
+
+div.well center{
+ width:100vw !important;
+}
+div.well center:nth-child(1){
+ margin-top:.5em !important;
+}
+
+div.well center:nth-child(3){
+ margin-bottom:  0 !important;
+ background:#064471;
+ padding:1em 0 !important;
+ color: white !important;
+ font-weight: 500 !important;
+}
+div.well center #timeZone{
+ color: #064471 !important;
+  font-size: .7em !important;
+}
+
+div.well hr{
+ margin-top:1.2em !important;
+}
+div.row{
+  margin-top:1.2em !important;
+}
+div.col-md-4 .pull-left{
+  margin-left:.6em !important;
+}
+
+div.col-md-4 .pull-right{
+  margin-right:.6em !important;
+}
+div.col-md-4 .pull-right .btn,div.col-md-4 .pull-left .btn{
+  padding:.9em !important;
+  font-size: .9em !important;
+  overflow: hidden !important;
+  white-space: nowrap;
+}
+
+div.well center table{
+  margin-top:1.2em !important;
+
+    
+}
+
+div.well center table.table td,div.well center table.table th {
+  padding:1em !important;
+  text-align: center !important;
+  border:1px solid #e4f4b5;
+}
+
+// tunkir
+
+div.datalist div#cetakTunkir th{
+  padding:.8em !important;
+  font-size: .64em !important;
+  text-align:center !important;
+}
+
+div.datalist div#cetakTunkir td{
+  padding:.8em !important;
+  font-size: .62em !important;
+  text-align:left !important;
+}
+
+div.datalist div#cetakTunkir .text-center th:nth-child(4),div.datalist div#cetakTunkir .text-center th:nth-child(5){
+ padding-right: 3em !important;
+}
+select#y,select#m{
+  width:70vw !important;
+  font-size: .5em !important;
+  padding:0 1em !important;
+  height:2em !important;
+  margin: 0 auto .8em !important;
+}
+
+div.datalist #data,div.datalist #data2,div.datalist #data3{
+  margin:1.2em auto 2em !important;
+}
+div.datalist{
+  overflow-x: hidden !important;
+}
+div.datalist .row,#tengahdivdatalistdata,#tengahdivdatalistdata2,#tengahdivdatalistdata3{
+  overflow-x: scroll !important;
+}
+
+#tengahdivdatalistdata{
+  display: block !important;
+  border:1px solid #0000 !important;
+}
+
+div.datalist .row td,div.datalist #data td,div.datalist #data2 td,div.datalist #data3 td{
+  padding:.8em !important;
+  font-size: .6em !important;
+  text-align:left !important;
+}
+div.datalist .row td span{
+  text-align:left !important;
+}
+div.datalist .row th,div.datalist div#cetakTunkir th,div.datalist #data th,div.datalist #data2 th,div.datalist #data3 th{
+  padding:1em !important;
+  font-size: .65em !important;
+  text-align:center !important;
+}
+button.btn,a.btn {
+  padding:.4em !important;
+  font-size: .5em !important;
+}
+.pageheader span{
+  margin:.9em 0 !important;
+  font-size: .5em !important;
+  padding:0 .9em !important;
+}
+
+div.datalist div#cetakTunkir{
+  overflow-x: scroll !important;
+  margin-top:1em !important;
+    
+}
