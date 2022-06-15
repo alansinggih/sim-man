@@ -8,6 +8,8 @@ Addons firefox untuk memudahkan kegiatan
     
 Fitur baru untuk tampilan pengaturan:
 
+---
+
  ### Release 2.2.5   
  * UI Setting lebih nyaman di gunakan
  * Penambahan Fitur "kembali"
