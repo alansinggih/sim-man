@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>On-hover TTS synthesizer options</title>
+  <style>
+body{
+  margin: 0;
+box-sizing: border-box;
+}
+
+#inaktif {
+width: 177px;
+    background: #109EAE;
+    padding: 15px 15px 68px;
+    text-align: center;
+color:white;
+}
+
+#inaktif select{
+margin-top: 10px;
+width:135px;
+height:35px;
+-webkit-appearance: none;
+-moz-appearance: none;
+border:none;
+background-color: #0c6c77;
+color:white;
+font-size: 13px;
+text-align:center
+}
+#inaktif select:hover{
+background-color: #D21414;
+font-size: 13.5px;
+color: #FFE3E3;
+}
+	</style>
+</head>
+<body>
+<div id="inaktif"><i>Extensi Tidak Aktif</i><br/>
+<select id="setStatus">
+                        <option value="true">Aktif</option>
+                        <option value="false">Tidak Aktif</Option>
+                    </select>
+</div>
+<script src="inactive.js"></script>
+</body>
+</html>
