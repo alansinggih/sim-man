@@ -1,0 +1,68 @@
+table.sv_q_matrix tr{
+  width:auto !important;
+
+  font-size: .9em !important;
+  background: #fdfdfd;
+  padding:.5em 10px 46px 10px !important;
+}
+table.sv_q_matrix tr:nth-of-type(odd){
+  background: #f9f9f9;
+}
+table.sv_q_matrix td{
+  width:97% !important;
+}
+
+table.sv_q_matrix td[data-bind="visible: question.hasRows"]{
+  background: rgba(26, 179, 148, 0.57);
+  width: auto !important;
+  padding:1em !important;
+  margin: 2vw 0 !important;
+  color: white;
+  border-radius: 8px;
+  font-size: .9em;
+  font-style: italic;
+}
+table.sv_q_matrix td[headers="Tidak"],table.sv_q_matrix td[headers="Ya"]{
+  float:left;
+  width:20% !important;
+  margin-left: 15% !important;
+}
+
+.sv_q_m_label{
+  float:left !important;
+}
+.sv_q_m_cell_label{
+  float:right !important;
+  width:100% !important;
+}
+
+.col-md-12{
+  margin:5px !important;
+}
+
+.well{
+  padding:10px 0 !important;  
+}
+.well  b {
+  margin: auto !important;;
+  padding: 0 5em !important;
+}
+.sv_row{
+  margin-bottom: 20px !important;
+  background: none !important;
+}
+fieldset{
+  background:none !important;
+}
+h5.sv_q_title{
+  padding:20px !important;
+  font-size: 1.2em !important;
+  font-style: italic;
+}
+.sv_nav{
+  padding: 2em 1em !important;
+}
+.sv_complete_btn{
+  margin: auto !important;
+  padding: .5em 4em !important;
+}
