@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Sim-Man",
-  "version": "1.1.8",
+  "version": "2.2.5",
   "description": "Si pembantu yang Nyaman di tampilan UI",
   "homepage_url": "https://github.com/usermh99/sim-man",
   "icons": {
@@ -12,8 +12,8 @@
   "content_scripts": [
     {
       "matches": ["https://simpeg.kemenkumham.go.id/*"],
+      "css":["css/Dekstop.css"],
       "js": ["js/jquery-3.3.1.js","js/ops.js","js/tambahelemen.js"],
-      "css": ["css/main.css","css/main2.css","css/main3.css","css/main4.css","css/item1.css","css/tambah.css"],
       "run_at": "document_idle"
     }
   ],
@@ -22,6 +22,7 @@
       ,"webRequestBlocking"
       ,"<all_urls>"
       ,"storage"
+      ,"tabs"
 ],
     "background" : {
         "scripts" : ["background.js"]
@@ -39,7 +40,7 @@
     }
     ,"applications": {
         "gecko": {
-            "id": "{72979423-dde0-437a-b51b-3fb8873604ce}"
+            "id": "sim-man@alansk.web"
         }
     }
  
