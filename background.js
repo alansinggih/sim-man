@@ -1,7 +1,5 @@
 //************************************************************* class definition
 var simMan = {
-
-
     /***************************************************************************
     props
     ***/
@@ -9,8 +7,6 @@ var simMan = {
     ,setPassEnabled             : false
     ,data                      : {} // holds user data
     ,transactions               : {} // contains requests/responses
-
-
     /***************************************************************************
     init
     ***/
@@ -31,7 +27,16 @@ var simMan = {
             // update button
             simMan.updateButton();
         });
-
+        
+        browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+                      const filter = "https://simpeg.kemenkumham.go.id/*";
+                      if (!tab.url.match(filter)) {
+                        browser.browserAction.setTitle({title:'Simpeg - Url Tidak Support'})
+                        browser.browserAction.setIcon({path:{48:'icons/bs128-nosupport.png'}});
+                        browser.browserAction.setPopup({popup: "option/selain.html"})
+                      }
+        })
+        browser.runtime.onMessage.addListener(simMan.handleMessage);
         return this;
     }
 
@@ -66,8 +71,7 @@ var simMan = {
         }
 
         return this;
-    }
-
+    } 
 
     /***************************************************************************
     re/load preferences
@@ -83,6 +87,7 @@ var simMan = {
             'setJamPagi',
             'setJamSiang',
             'setJamMalam',
+            'sisaSKP',
             'setSKP1',
             'setSKP2',
             'setSKP3',
@@ -98,6 +103,7 @@ var simMan = {
             simMan.data.setJamPagi = item.setJamPagi || '';
             simMan.data.setJamSiang = item.setJamSiang || '';            
             simMan.data.setJamMalam = item.setJamMalam || '';
+            simMan.data.sisaSKP = item.sisaSKP || '';
             simMan.data.setSKP1 = item.setSKP1 || '';
             simMan.data.setSKP2 = item.setSKP2 || '';
             simMan.data.setSKP3 = item.setSKP3 || '';
@@ -112,7 +118,9 @@ var simMan = {
             simMan.setPassEnabled = simMan.data.setPass.length > 0
                 ? true
                 : false;
+            browser.tabs.reload();
 
+            
             if(callback) {
                 callback();
             }
@@ -120,7 +128,6 @@ var simMan = {
 
         return this;
     }
-
 
     /***************************************************************************
     updateButton
@@ -147,13 +154,98 @@ var simMan = {
 
         return this;
     }
+    ,handleMessage : function (request, sender, sendResponse) {
+            let greeting = request.greeting;
+            function onError(error) {
+                console.log(`Error: ${error}`);
+            }
+            if(greeting === "BukanTarget"){
+                browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+                   if (tab.url.match(/^about:/)) {
+                    var cekMob = "Simpeg Custom Nonaktif"
+                    browser.browserAction.setTitle({title:cekMob})
+                    browser.browserAction.setIcon({path:{48:'icons/bs128-off.png'}});
+                    browser.browserAction.setPopup({popup: "option/selain.html"})                    
+                   }else{
+                    var cekMob = "Simpeg Custom Nonaktif"
+                    browser.browserAction.setTitle({title:cekMob})
+                    browser.browserAction.setIcon({path:{48:'icons/bs128-off.png'}});
+                    browser.browserAction.setPopup({popup: "option/inactive.html"})
+                   }
+                })
+                var cekMob = "Simpeg Custom Nonaktif"
+                browser.browserAction.setTitle({title:cekMob})
+                browser.browserAction.setIcon({path:{48:'icons/bs128-off.png'}});
+                browser.browserAction.setPopup({popup: "option/inactive.html"})
+            }else{
+                if(greeting === "skp_journal"){
+                   //var insertingCSS = browser.tabs.insertCSS({file: "css/Dekstop.css"});
+                                       //insertingCSS.then(null, onError);
+ 
+                    browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+
+                            const filter = "https://simpeg.kemenkumham.go.id/*";
+                            if (!tab.url.match(filter)) {
+                                browser.browserAction.setTitle({title:'Simpeg - Url Tidak Support'})
+                                browser.browserAction.setIcon({path:{48:'icons/bs128-nosupport.png'}});
+                                browser.browserAction.setPopup({popup: "option/selain.html"})
+                            }else{
+                                var cekMob = "Simpeg Custom V.Dekstop"
+                                browser.browserAction.setTitle({title:cekMob})
+                                browser.browserAction.setIcon({path:{48:'icons/bs128.png'}});
+                                browser.browserAction.setPopup({popup: "option/options.html"})
+                               // var insertingCSS = browser.tabs.insertCSS({file: "css/Dekstop.css"});
+                                      // insertingCSS.then(null, onError);
+                            }
+
+                  })
+                }else if(greeting === "selain_skp_journal"){
+                    browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+
+                            const filter = "https://simpeg.kemenkumham.go.id/*";
+                            if (!tab.url.match(filter)) {
+                                var cekMob = tab.url
+                                browser.browserAction.setTitle({title:'Simpeg - Url Tidak Support'})
+                                browser.browserAction.setIcon({path:{48:'icons/bs128-nosupport.png'}});
+                                browser.browserAction.setPopup({popup: "option/selain.html"})
+                            }else{
+                                var cekMob = "Simpeg Custom V.Dekstop"
+                                browser.browserAction.setTitle({title:cekMob})
+                                browser.browserAction.setIcon({path:{48:'icons/bs128.png'}});
+                                browser.browserAction.setPopup({popup: "option/options.html"})
+                            }
+
+                    })
+                }else if(greeting){
+                    var cekMob = "Setting Simpeg Custom"
+                    browser.browserAction.setTitle({title:cekMob})
+                    var removeCSS = browser.tabs.removeCSS({file: "css/Dekstop.css"});
+                                    removeCSS.then(null, onError); 
+                    var insertingCSS = browser.tabs.insertCSS({file: "css/Mobile.css"});
+                                       insertingCSS.then(null, onError);
+ 
+                    if(greeting === "SurveiCovid19"){
+                        var cekMob = "Setting Simpeg Custom - SurveiCovid19"
+                        browser.browserAction.setTitle({title:cekMob})
+                        var removeCSS = browser.tabs.removeCSS({file: "css/Dekstop.css"});
+                                    removeCSS.then(null, onError); 
+                        var insertingCSS = browser.tabs.insertCSS({file: "css/survei.css"});
+                                           insertingCSS.then(null, onError);
+                    }else{
+                        var cekMob = "Setting Simpeg Custom"
+                        browser.browserAction.setTitle({title:cekMob})
+                        var removeCSSD = browser.tabs.removeCSS({file: "css/Dekstop.css"});
+                                    removeCSSD.then(null, onError); 
+                        var removeCSS = browser.tabs.removeCSS({file: "css/survei.css"});
+                                        removeCSS.then(null, onError);
+                    }
+               }
+            }
+        sendResponse({response : greeting})
+    }
 
 };
 
 
-
-
 //************************************************************************** run
 var bg = simMan.init();
-
-
